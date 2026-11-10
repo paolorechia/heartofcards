@@ -1,0 +1,66 @@
+/* ============================================================
+   ANIMATIONS — Magical transitions and keyframes
+   ============================================================ */
+
+/* ---- Fade In ---- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* ---- Pulse (loading) ---- */
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pulse-card {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ---- Shimmer (skeleton) ---- */
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+/* ---- Glow (hover effect) ---- */
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(147, 51, 234, 0.2), 0 0 10px rgba(147, 51, 234, 0.1); }
+  50% { box-shadow: 0 0 15px rgba(147, 51, 234, 0.4), 0 0 30px rgba(147, 51, 234, 0.2); }
+  100% { box-shadow: 0 0 5px rgba(147, 51, 234, 0.2), 0 0 10px rgba(147, 51, 234, 0.1); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ---- Float (floating effect) ---- */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ---- Spin (rotation) ---- */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

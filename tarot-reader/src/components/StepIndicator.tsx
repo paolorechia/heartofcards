@@ -1,35 +1,45 @@
 import React from 'react'
 
-interface StepProps {
+interface StepIndicatorProps {
   currentStep: number
   totalSteps: number
   title: string
 }
 
-export const StepIndicator: React.FC<StepProps> = ({ currentStep, totalSteps, title }) => {
+export const StepIndicator: React.FC<StepIndicatorProps> = ({
+  currentStep,
+  totalSteps,
+  title,
+}) => {
   const stepNumbers = Array.from({ length: totalSteps }, (_, i) => i + 1)
 
   return (
-    <div className="flex items-center justify-center gap-2 mb-8">
+    <div className="step-indicator">
       {stepNumbers.map((step) => (
         <React.Fragment key={step}>
           <div
-            className={`rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold transition-colors ${
+            className={`step-indicator__dot ${
               step === currentStep
-                ? 'bg-purple-600 text-white'
+                ? 'step-indicator__dot--active'
                 : step < currentStep
-                ? 'bg-purple-300 text-purple-800'
-                : 'bg-purple-100 text-purple-300'
+                ? 'step-indicator__dot--complete'
+                : 'step-indicator__dot--pending'
             }`}
           >
             {step}
           </div>
           {step < totalSteps && (
-            <div className={`w-8 h-0.5 ${step < currentStep ? 'bg-purple-300' : 'bg-purple-100'}`} />
+            <div
+              className={`step-indicator__line ${
+                step < currentStep
+                  ? 'step-indicator__line--complete'
+                  : 'step-indicator__line--pending'
+              }`}
+            />
           )}
         </React.Fragment>
       ))}
-      <span className="ml-3 text-sm text-purple-600 font-medium hidden sm:inline">{title}</span>
+      <span className="step-indicator__title">{title}</span>
     </div>
   )
 }

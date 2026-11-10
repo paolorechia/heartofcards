@@ -1,27 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-/* Custom scrollbar for a polished feel */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #faf5ff;
-}
-::-webkit-scrollbar-thumb {
-  background: #c4b5fd;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
-}
+/* Import design tokens, components, and animations */
+@import './styles/tokens.css';
+@import './styles/components.css';
+@import './styles/animations.css';

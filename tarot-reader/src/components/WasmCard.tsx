@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import init, { TarotSvgGen } from '../../pkg/tarot_gen'
+import '../styles/components.css'
 
 interface WasmCardProps {
   cardName: string
@@ -39,8 +40,8 @@ export const WasmCard: React.FC<WasmCardProps> = ({
 
   if (loading) {
     return (
-      <div className="w-44 h-72 bg-purple-900/40 rounded-xl animate-pulse flex items-center justify-center">
-        <span className="text-3xl">🔮</span>
+      <div className="wasm-card__loading">
+        <span className="wasm-card__loading-icon">🔮</span>
       </div>
     )
   }
@@ -48,7 +49,7 @@ export const WasmCard: React.FC<WasmCardProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-44 h-72 hover:scale-105 hover:shadow-xl hover:z-10 transition-all duration-200 cursor-pointer"
+      className="wasm-card"
       dangerouslySetInnerHTML={{ __html: svg || '' }}
     />
   )

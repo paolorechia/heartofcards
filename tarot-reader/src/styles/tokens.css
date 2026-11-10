@@ -1,0 +1,108 @@
+/* ============================================================
+   DESIGN TOKENS — CSS custom properties for the tarot reader
+   ============================================================ */
+
+:root {
+  /* ---- Primary palette ---- */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7e22ce;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+
+  /* ---- Accent colors (suit-based) ---- */
+  --wands-orange-400: #fb923c;
+  --wands-red-500: #ef4444;
+  --cups-blue-400: #60a5fa;
+  --cups-indigo-500: #6366f1;
+  --swords-slate-400: #94a3b8;
+  --swords-slate-600: #475569;
+  --pentacles-green-400: #4ade80;
+  --pentacles-emerald-600: #059669;
+
+  /* ---- Neutral ---- */
+  --red-500: #ef4444;
+  --green-100: #dcfce7;
+  --green-700: #16a34a;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ---- Text ---- */
+  --text-body: #6b6375;
+  --text-heading: #08060d;
+  --text-muted: #a78bba;
+
+  /* ---- Backgrounds ---- */
+  --bg-main: linear-gradient(135deg, #faf5ff 0%, #ffffff 50%, #eef2ff 100%);
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf5ff;
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 1px 3px rgba(107, 33, 168, 0.08), 0 1px 2px rgba(107, 33, 168, 0.06);
+  --shadow-card-hover: 0 10px 25px rgba(107, 33, 168, 0.12), 0 4px 10px rgba(107, 33, 168, 0.08);
+  --shadow-card-glow: 0 0 20px rgba(147, 51, 234, 0.3), 0 0 40px rgba(147, 51, 234, 0.15);
+  --shadow-button: 0 4px 14px rgba(147, 51, 234, 0.25);
+  --shadow-header: 0 1px 3px rgba(107, 33, 168, 0.08);
+
+  /* ---- Radii ---- */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.75rem;    /* 12px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.25rem;    /* 20px */
+  --radius-full: 9999px;
+
+  /* ---- Spacing ---- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* ---- Font ---- */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ---- Z-index ---- */
+  --z-card: 10;
+  --z-card-hover: 20;
+  --z-modal: 50;
+}
+
+/* ---- Body base ---- */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--bg-main);
+  min-height: 100vh;
+}
+
+/* ---- Custom scrollbar ---- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--purple-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-500);
+}
