@@ -25,9 +25,10 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: tarot-reader/package-lock.json
 
       - name: Install and Build
+        working-directory: tarot-reader
         run: |
           npm ci
           npm run build
@@ -35,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: tarot-reader/dist
 
   deploy:
     name: Deploy
