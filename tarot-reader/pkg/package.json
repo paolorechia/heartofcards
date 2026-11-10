@@ -1,0 +1,15 @@
+{
+  "name": "tarot-gen",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "tarot_gen_bg.wasm",
+    "tarot_gen.js",
+    "tarot_gen.d.ts"
+  ],
+  "main": "tarot_gen.js",
+  "types": "tarot_gen.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
